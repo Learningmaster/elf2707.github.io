@@ -3,18 +3,16 @@
 window.onload = function () {
      const svgMorpheus = new SVGMorpheus('#icons');
      const icons=[
-        'svg01',
-        'svg02',
-        'svg03',
-        'svg04',
-        'svg05',
-        'svg06',
-        'svg07',
-        'svg08',
-        'svg09',
-        'svg10',
-        'svg11',
-        'svg12'
+        'svgPath01',
+        'svgPath02',
+        'svgPath03',
+        'svgPath04',
+        'svgPath06',
+        'svgPath07',
+        'svgPath08',
+        'svgPath09',
+        'svgPath10',
+        'svgPath11',
       ];
       
       const easings={
@@ -66,32 +64,73 @@ window.onload = function () {
     //return sel.options[sel.selectedIndex].value;
  // }
 
-  var timeoutInstance, manualChange=false;
-  var currentIconIndex = 0;
+  // var timeoutInstance, manualChange=false;
+  // var currentIconIndex = 0;
 
-  function onIconChange() {
-    clearTimeout(timeoutInstance);
-    var valEasing='elastic-in',
-        valDuration=500,
-        valRotation='none';
-    svgMorpheus.to(icons[currentIconIndex], {duration: valDuration, easing: valEasing, rotation: valRotation}, launchTimer);
-  }
+  // function onIconChange() {
+  //   clearTimeout(timeoutInstance);
+  //   var valEasing='elastic-in',
+  //       valDuration=500,
+  //       valRotation='none';
+  //   svgMorpheus.to(icons[currentIconIndex], {duration: valDuration, easing: valEasing, rotation: valRotation}, launchTimer);
+  // }
   
-  function timerTick() {
-    let selIndex = currentIconIndex;
-    while(selIndex === currentIconIndex) {
-      selIndex=Math.round(Math.random()*(icons.length-1));
-    }
+  // function timerTick() {
+  //   let selIndex = currentIconIndex;
+  //   while(selIndex === currentIconIndex) {
+  //     selIndex=Math.round(Math.random()*(icons.length-1));
+  //   }
     
-    currentIconIndex=selIndex;
-    onIconChange();
-  }
+  //   currentIconIndex=selIndex;
+  //   onIconChange();
+  // }
 
-  function launchTimer() {
-    timeoutInstance=setTimeout(timerTick, 1000);
-  }
+  // function launchTimer() {
+  //   timeoutInstance=setTimeout(timerTick, 1000);
+  // }
   
-  selIcon.addEventListener('change', onIconChange);
+  // selIcon.addEventListener('change', onIconChange);
 
-  launchTimer();
+  // launchTimer();
+
+// audio
+var audio = new Audio("https://s3-us-west-2.amazonaws.com/s.cdpn.io/111167/tick.mp3");
+
+var tl = new TimelineMax({
+  yoyo: true,
+  repeat: -1,
+  repeatDelay: 1
+});
+
+tl.timeScale(1.05);
+
+tl.set("#", {
+  transformOrigin: "center center",
+});
+
+for(var i = -1; i < icons.length; i++) {
+  
+  tl
+    .to("#svgPath01", .2, {
+      delay: .45,
+      scale: 1.02
+    })
+    .to("#svgPath01", .1, {
+      scale: .98
+    })
+    .to("#svgPath01", .2, {
+      morphSVG: {
+        shape: icons[i],
+        shapeIndex: 1
+      },
+      stroke: '#F00',
+      scale: 1,
+      onComplete: function(){
+        audio.play();
+      },
+      onReverseComplete: function(){
+        audio.play();
+      }
+    })
+  }
 };

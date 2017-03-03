@@ -96,21 +96,16 @@ window.onload = function () {
 // audio
 var audio = new Audio("https://s3-us-west-2.amazonaws.com/s.cdpn.io/111167/tick.mp3");
 
-var tl = new TimelineMax({
-  yoyo: true,
-  repeat: -1,
-  repeatDelay: 1
-});
+var tl = new TimelineMax({ onUpdate:updateSlider });
 
 tl.timeScale(1.05);
 
-tl.set("#svgPath01", {
-  transformOrigin: "center center",
-});
+var icon1 = document.getElementById("svgPath01");
 
-for(var i = 0; i < icons.length; i++) {
+
+for(var i = 1; i < icons.length; i++) {
   tl
-    .to("#svgPath01", {
+    .to(icon1, {
       morphSVG: {
         shape: icons[i],
         shapeIndex: 1

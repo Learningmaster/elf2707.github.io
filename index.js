@@ -102,7 +102,12 @@ var tl = new TimelineMax({
   repeatDelay: 1
 });
 
+
 tl.timeScale(1.05);
+
+tl.set("#svgPath01", {
+  transformOrigin: "center center",
+})
 
 const icon1 = document.getElementById("svgPath01");
 

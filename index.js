@@ -1,7 +1,7 @@
 'use strict';
 
 window.onload = function () {
-     const svgMorpheus = new SVGMorpheus('#icon');
+     const svgMorpheus = new SVGMorpheus('#icos');
      const icons=[
         'svg01',
         'svg02',

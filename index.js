@@ -108,17 +108,9 @@ tl.set("#svgPath01", {
   transformOrigin: "center center",
 });
 
-for(var i = -1; i < icons.length; i++) {
-  console.log(icons[i]);
+for(var i = 0; i < icons.length; i++) {
   tl
-    .to("#svgPath01", .2, {
-      delay: .45,
-      scale: 1.02
-    })
-    .to("#svgPath01", .1, {
-      scale: .98
-    })
-    .to("#svgPath01", .2, {
+    .to("#svgPath01", {
       morphSVG: {
         shape: icons[i],
         shapeIndex: 1

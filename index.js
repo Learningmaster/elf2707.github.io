@@ -3,16 +3,16 @@
 window.onload = function () {
      const svgMorpheus = new SVGMorpheus('#icons');
      const icons=[
-        'svgPath01',
-        'svgPath02',
-        'svgPath03',
-        'svgPath04',
-        'svgPath06',
-        'svgPath07',
-        'svgPath08',
-        'svgPath09',
-        'svgPath10',
-        'svgPath11',
+        '#svgPath01',
+        '#svgPath02',
+        '#svgPath03',
+        '#svgPath04',
+        '#svgPath06',
+        '#svgPath07',
+        '#svgPath08',
+        '#svgPath09',
+        '#svgPath10',
+        '#svgPath11',
       ];
       
       const easings={

@@ -96,11 +96,15 @@ window.onload = function () {
 // audio
 var audio = new Audio("https://s3-us-west-2.amazonaws.com/s.cdpn.io/111167/tick.mp3");
 
-var tl = new TimelineMax({ onUpdate:updateSlider });
+var tl = new TimelineMax({
+  yoyo: true,
+  repeat: 0,
+  repeatDelay: 1
+});
 
 tl.timeScale(1.05);
 
-var icon1 = document.getElementById("svgPath01");
+const icon1 = document.getElementById("svgPath01");
 
 
 for(var i = 1; i < icons.length; i++) {

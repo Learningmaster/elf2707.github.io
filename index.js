@@ -71,7 +71,7 @@ window.onload = function () {
 
   function onIconChange() {
     clearTimeout(timeoutInstance);
-    var valEasing='Elastic Out',
+    var valEasing='elastic-in',
         valDuration=500,
         valRotation='None';
     svgMorpheus.to(icons[currentIconIndex], {duration: valDuration, easing: valEasing, rotation: valRotation}, launchTimer);

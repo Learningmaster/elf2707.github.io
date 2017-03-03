@@ -109,7 +109,7 @@ tl.set("#svgPath01", {
 });
 
 for(var i = -1; i < icons.length; i++) {
-  
+  console.log(icons[i]);
   tl
     .to("#svgPath01", .2, {
       delay: .45,

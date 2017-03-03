@@ -96,11 +96,7 @@ window.onload = function () {
 // audio
 var audio = new Audio("https://s3-us-west-2.amazonaws.com/s.cdpn.io/111167/tick.mp3");
 
-var tl = new TimelineMax({
-  yoyo: true,
-  repeat: 0,
-  repeatDelay: 1
-});
+var tl = new TimelineMax();
 
 tl.timeScale(1.05);
 

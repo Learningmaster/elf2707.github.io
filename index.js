@@ -104,9 +104,9 @@ var tl = new TimelineMax({
 
 tl.timeScale(1.05);
 
-// tl.set("#", {
-//   transformOrigin: "center center",
-// });
+tl.set("#svgPath01", {
+  transformOrigin: "center center",
+});
 
 for(var i = -1; i < icons.length; i++) {
   
